@@ -17,7 +17,7 @@ class Solution {
 		for (int i = 0; i < s.length(); i++) {
 			
 			char curr = s.charAt(i);
-			
+			//when stack is empty and we need to push
 			if (st.isEmpty()) {
 				st.push(new Pair(curr, 1));
 			}
@@ -29,6 +29,8 @@ class Solution {
 					st.pop();
 				}
 			}
+			//when stack isnt empty and top character is different "aaba"-- here if in stack we have [ (a,2) , (b,1) ] now 
+				//this statement would be required to add the next pair which is [ (a,2) , (b,1) , (a,1)]
 			else {
 				st.push(new Pair(curr, 1));
 			}
